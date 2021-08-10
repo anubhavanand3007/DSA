@@ -1,0 +1,1 @@
+{"name":"Local: decimal_to_others","url":"d:\\C++\\lessons\\Number System\\decimal_to_others.cpp","tests":[{"id":1626712284987,"input":"12","output":"1100\n14\nC"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\lessons\\Number System\\decimal_to_others.cpp","group":"local","local":true}
