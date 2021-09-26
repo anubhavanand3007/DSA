@@ -16,12 +16,18 @@ int factorial(int n){
     return n*factorial(n-1);
 }
 
+int nthfibonachi(int n){
+    if(n==0 || n==1) return n;
+    return nthfibonachi(n-1)+nthfibonachi(n-2);
+}
+
 int solve(){
     int n, p;
     cin >> n >> p ;
     cout << Sum(n) << endl;
     cout << power(n,p) << endl;
-    cout << factorial(n);
+    cout << factorial(n) << endl;
+    cout << nthfibonachi(n);
 }
 
 int main(){

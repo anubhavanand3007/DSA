@@ -26,6 +26,7 @@ int solve(){
             break;
         }
     }
+    return 0;
 }
 
 int main(){
