@@ -71,6 +71,32 @@ void insert(node* &head, int val, int index){
     }
 }
 
+void deletenode(node* &head, int index){
+    if(index == 1){
+        head->next->prev = NULL;
+        node* del = head;
+        head= head->next;
+        delete del;
+    }
+    else{
+        node *curr = head;
+        for(int i=1;i<index-1;i++){
+            curr = curr->next;
+        }
+        if(curr->next->next == NULL){
+            node *del = curr->next;
+            curr->next = NULL;
+            delete del;
+        }
+        else{
+            curr->next->next->prev = curr;
+            node *del = curr->next;
+            curr->next = curr->next->next;
+            delete (del);
+        }
+    }
+}
+
 void display_rev(node* &head){
     cout << "NULL";
     node* curr = head;
@@ -90,7 +116,9 @@ int solve(){
     push_back(head, 3);
     push_back(head, 5);
     push_front(head, 0);
-    insert(head, 4, 5);
+    insert(head, 4, 7);
+    insert(head, 4, 6);
+    deletenode(head, 7);
 
     display(head);
     cout << endl;
