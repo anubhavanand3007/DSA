@@ -99,6 +99,22 @@ void deletenode(node* &head, int index){
     }
 }
 
+void reverse(node *&head){
+    node* prev = NULL;
+    node* curr = head;
+    node* nexts = head->next;
+    while(nexts != head){
+        curr->next = prev;
+        prev = curr;
+        curr = nexts;
+        nexts = nexts->next;
+    }
+    head->next=curr;
+    curr->next = prev;
+    head = curr;
+    
+}
+
 
 
 int solve(){
@@ -109,7 +125,7 @@ int solve(){
     insert(head,0,4);
     deletenode(head, 2);
 
-
+    reverse(head);
     display(head);
     return 0;
 }

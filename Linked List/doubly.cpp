@@ -109,6 +109,20 @@ void display_rev(node* &head){
     }
 }
 
+void reverse(node* &head){
+    node *prevs = NULL, *curr = head, *nexts=head->next;
+    while(nexts != NULL){
+        curr->next = prevs;
+        curr->prev = nexts;
+        prevs = curr;
+        curr = nexts;
+        nexts = nexts->next;
+    }
+    head = curr;
+    curr->next = prevs;
+    curr->prev = nexts;
+}
+
 int solve(){
     node*head = NULL;
     push_back(head, 1);
@@ -116,10 +130,11 @@ int solve(){
     push_back(head, 3);
     push_back(head, 5);
     push_front(head, 0);
-    insert(head, 4, 7);
-    insert(head, 4, 6);
+    insert(head, 4, 5);
+    insert(head, 6, 7);
     deletenode(head, 7);
 
+    reverse(head);
     display(head);
     cout << endl;
     display_rev(head);
