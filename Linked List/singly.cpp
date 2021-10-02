@@ -88,6 +88,21 @@ void clear(node* &head){
     head = NULL;
 }
 
+void reverse(node* &head){
+    node* prev = NULL;
+    node* curr = head;
+    node* nexts = head->next;
+    while(nexts!=NULL){
+        curr->next = prev;
+        prev = curr;
+        curr = nexts;
+        nexts = nexts->next;
+    }
+    head = curr;
+    curr->next = prev;
+
+}
+
 int main(){
 	node *head = NULL;
 
@@ -97,7 +112,9 @@ int main(){
 	deletenode(head, 2);
     insert(head,34,2);
     insert(head,12,1);
-    clear(head);
+    // clear(head);
     push_back(head,1);
+    reverse(head);
+
     display(head);
 }
