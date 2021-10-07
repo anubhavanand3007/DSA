@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int postfixcalculation(string a){
+int prefix_calculation(string a){
     stack<int> st;
     for(int i=a.size()-1;i>=0;i--){
         if(a[i] >= '0' && a[i] <= '9'){
@@ -43,7 +43,7 @@ int postfixcalculation(string a){
 
 int solve(){
     string a = "/+459";
-    cout << postfixcalculation(a);
+    cout << prefix_calculation(a);
 }
 
 int main(){
