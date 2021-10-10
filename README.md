@@ -2,7 +2,7 @@
 This is contain only intermidiate to high C++ data structure and algorithms
 
 ## Incomplete Topics
-### recursion
+### Recursion
 ### Bitmanipulation
 
 ## Ununderstandable Questions
