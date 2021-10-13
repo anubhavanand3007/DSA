@@ -5,5 +5,8 @@ This is contain only intermidiate to high C++ data structure and algorithms
 ### Recursion
 ### Bitmanipulation
 
+## Skipped Topics (for later)
+### Two Pointers
+
 ## Ununderstandable Questions
 ### home/sliding_window.cpp
