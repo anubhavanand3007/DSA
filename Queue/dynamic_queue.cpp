@@ -39,21 +39,23 @@ class queue{
     }
 
     void dequeue(){
-        if(front == NULL || back->next == front){
+        if(front == NULL){
             cout << "queue empty";
             return;
         }
         node *del = front;
         front = front->next;
+        if(front == NULL)back = NULL;
         delete del;
     }
 
     int peek(){
-        if(front!=NULL) return front->data;
+        if(front!=NULL ) return front->data;
+        return -1;
     }
 
     bool empty(){
-        if(back->next == front || front == NULL)return true;
+        if(front == NULL)return true;
         else return false;
     }
 
@@ -67,8 +69,9 @@ class queue{
         return(++count);
     }
 
-    int back(){
-        if(back->next != front && back!=NULL)return back->data;
+    int backp(){
+        if(back!=NULL)return back->data;
+        return -1;
     }
 
 };
@@ -90,12 +93,11 @@ int solve(){
     a.dequeue();
 
     cout << a.peek();
-
-
-
-
+    cout << a.empty();
+    cout << a.backp();
 }
 
 int main(){
     solve();
 }
+
