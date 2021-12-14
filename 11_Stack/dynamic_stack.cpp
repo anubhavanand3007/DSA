@@ -54,6 +54,17 @@ class stack{
         return false;
 
     }
+
+    int size(){
+        if(top == NULL)return 0;
+        node *n = top;
+        int count =0;
+        while(n!=NULL){
+            count++;
+            n = n->next;
+        }
+        return count;
+    }
 };
 
 int solve(){
@@ -71,12 +82,16 @@ int solve(){
     
     cout << a.Top();
     a.pop();
+    cout << a.size();
+
 
     cout << a.Top();
     a.pop();
 
+
     cout << a.Top();
     a.pop();
+
 
 }
 

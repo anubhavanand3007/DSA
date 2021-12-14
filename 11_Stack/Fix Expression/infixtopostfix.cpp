@@ -25,7 +25,7 @@ string infix_to_postfix(string s){
             }while(!st.empty() && s[i] !='(');
         }
         else{
-            while(!st.empty() && (s[i]) < precedence(st.top())){
+            while(!st.empty() && precedence(s[i]) < precedence(st.top())){
                 postfix+=st.top();
                 st.pop();
             }
@@ -40,7 +40,7 @@ string infix_to_postfix(string s){
 }
 
 int solve(){
-    string infix = "5+3/2";
+    string infix = "0+0/0";
 
     string postfix = infix_to_postfix(infix);
     cout << postfix;
