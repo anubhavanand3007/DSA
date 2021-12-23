@@ -11,7 +11,7 @@ class graph{
     public:
     graph(){
         //visited array
-        vector<bool> visited(nodes+1);
+        vector<bool> visited(nodes+1,0);
         this->visited = visited;
 
 
@@ -98,16 +98,40 @@ class graph{
             }
         }
     }
+
+    void BFS(int root=0){
+        if(!adjl[root].size())root=this->initial_node;
+        cout << root << " ";
+        visited[root] = 1;
+        queue<int> q;
+        q.push(root);
+        while(!q.empty()){
+            for(int i=0;i<q.size();i++){
+                int curr_arr = q.front();
+                for(int j=0;j<adjl[curr_arr].size();j++){
+                    int curr_val = adjl[curr_arr][j];
+                    if(!visited[curr_val]){
+                        cout << curr_val << " ";
+                        visited[curr_val] = 1;
+                        q.push(curr_val);
+                    }
+                }
+                q.pop();
+            }
+        }
+        
+    }
 };
 
 int solve(){
     graph a1;
     a1.build_adjl();
-    a1.display_adjl();
-    a1.adjl_to_adjm();
-    a1.build_adjm();
-    a1.display_adjm();
-    a1.DFS();
+    // a1.display_adjl();
+    // a1.adjl_to_adjm();
+    // a1.build_adjm();
+    // a1.display_adjm();
+    // a1.DFS();
+    a1.BFS();
 
     return 0;
 }
