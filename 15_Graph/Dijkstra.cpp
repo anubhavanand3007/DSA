@@ -8,9 +8,9 @@ vector<int> Dijkstra(map<char,vector<pair<char,int>>> adjl, char start, int node
     mpn.insert({0,start});
     while(!mpn.empty()){
         auto node = *(mpn.begin());
-        for(auto ned: adjl[node.second]){
-            dist_arr[ned.first] = min(dist_arr[ned.first],node.first+ned.second); 
-            mpn.insert({dist_arr[ned.first],ned.first}) ;
+        for(auto index: adjl[node.second]){
+            dist_arr[index.first] = min(dist_arr[index.first],node.first+index.second); 
+            mpn.insert({dist_arr[index.first],index.first}) ;
         }
         mpn.erase(node);
 
