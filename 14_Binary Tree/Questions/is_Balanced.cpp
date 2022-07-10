@@ -32,7 +32,8 @@ bool is_Balanced(treeNode* root, int *height){
 
     if(abs(rh - lh) > 1){
         return false;
-    } else{
+    } 
+    else{
         return true;
     }
 }
